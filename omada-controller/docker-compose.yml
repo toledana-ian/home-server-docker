@@ -21,8 +21,8 @@ services:
       - PORT_RTTY=29816
       - SHOW_SERVER_LOGS=true
       - SHOW_MONGODB_LOGS=false
-      #- SSL_CERT_NAME=tls.crt
-      #- SSL_KEY_NAME=tls.key
+      - SSL_CERT_NAME=tls.crt
+      - SSL_KEY_NAME=tls.key
       - TZ=Etc/UTC
     ports:
       - "8088:8088"
