@@ -5,5 +5,9 @@ services:
     image: homeassistant/home-assistant:stable
     volumes:
       - ./config:/config
+    ports:
+      - "8123:8123"  # Home Assistant web interface
+      - "1883:1883"  # MQTT
+      - "5353:5353"  # mDNS
+      - "8124:8124"  # Home Assistant Supervisor
     restart: always
-    network_mode: host
