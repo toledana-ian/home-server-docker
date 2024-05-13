@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  zoneminder:
+    image: dlandon/zoneminder
+    container_name: zoneminder
+    ports:
+      - "8080:80"     # Web interface
+    volumes:
+      - ./docker-volumes/data:/var/cache/zoneminder # Persistent storage for recordings and configurations
+    environment:
+      - TZ=Asia/Manila  # Set your timezone
+      - SHMEM=100%            # Use 50% of installed RAM for shared memory
+      - PUID=1000            # User ID for file permissions
+      - PGID=1000            # Group ID for file permissions
+    restart: unless-stopped
