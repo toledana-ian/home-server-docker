@@ -1,0 +1,8 @@
+# Example configuration.yaml
+homeassistant:
+  name: My Home
+  latitude: 13.9363
+  longitude: 121.4239
+  elevation: 100
+  unit_system: metric
+  time_zone: Asia/Manila
