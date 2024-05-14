@@ -11,7 +11,14 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./docker-volumes/config.yml:/config/config.yml
       - ./docker-volumes/storage:/media/frigate
-      - /tmp/cache:tmpfs:rw,size=1000000000
+      - tmpfs-volume:/tmp/cache
     ports:
       - "5000:5000"  # Web interface for Frigate
       - "1935:1935"  # RTMP stream
+
+volumes:
+  tmpfs-volume:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+      o: size=1000000000
