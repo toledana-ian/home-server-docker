@@ -2,9 +2,11 @@ version: '3.9'
 services:
   frigate:
     container_name: frigate
-    image: blakeblackshear/frigate:stable
+    image: ghcr.io/blakeblackshear/frigate:stable
     restart: unless-stopped
     shm_size: '64mb'
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./docker-volumes/config.yml:/config/config.yml
