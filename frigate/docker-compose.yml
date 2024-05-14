@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  frigate:
+    container_name: frigate
+    image: blakeblackshear/frigate:stable
+    restart: unless-stopped
+    shm_size: '64mb'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./docker-volumes/config.yml:/config/config.yml
+      - ./docker-volumes/storage:/media/frigate
+      - /tmp/cache:tmpfs:rw,size=1000000000
+    ports:
+      - "5000:5000"  # Web interface for Frigate
+      - "1935:1935"  # RTMP stream
