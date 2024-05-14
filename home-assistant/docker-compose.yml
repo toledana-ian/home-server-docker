@@ -4,7 +4,7 @@ services:
     container_name: homeassistant
     image: homeassistant/home-assistant:stable
     volumes:
-      - ./config:/config
+      - ./docker-volumes/config:/config
     ports:
       - "8123:8123"  # Home Assistant web interface
       - "1883:1883"  # MQTT
