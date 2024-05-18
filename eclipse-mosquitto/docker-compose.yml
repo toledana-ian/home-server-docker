@@ -8,6 +8,8 @@ services:
       - ./docker-volumes/data:/mosquitto/data
       - ./docker-volumes/config:/mosquitto/config
       - ./docker-volumes/log:/mosquitto/log
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/passwordfile:/mosquitto/config/passwordfile
     ports:
       - "1883:1883"
       - "9001:9001"  # WebSockets port
