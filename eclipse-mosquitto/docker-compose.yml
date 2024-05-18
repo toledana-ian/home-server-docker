@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  eclipse-mosquitto:
+    container_name: eclipse-mosquitto
+    image: eclipse-mosquitto:latest
+    restart: always
+    volumes:
+      - ./docker-volumes/data:/mosquitto/data
+      - ./docker-volumes/config:/mosquitto/config
+      - ./docker-volumes/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "9001:9001"  # WebSockets port
