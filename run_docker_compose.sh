@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of directories
-folders=("adguard" "homarr" "omada-controller" "portainer")
+folders=("adguard" "frigate" "homarr" "home-assistant" "omada-controller" "portainer")
 
 # Loop through each folder and run the docker compose command
 for folder in "${folders[@]}"; do
